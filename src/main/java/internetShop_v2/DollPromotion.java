@@ -1,10 +1,11 @@
 package internetShop_v2;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DollPromotion implements Promotion {
-    public ArrayList<Product> calculateBasketAfterPromotion(Basket basket){
-        ArrayList<Product> x = basket.getProducts();
+    public List<Product> calculateBasketAfterPromotion(Basket basket){
+        List<Product> x = basket.getProducts();
         for (int i = 0; i < basket.getProducts().size(); i++){
             if (x.get(i) == null){
                 break;

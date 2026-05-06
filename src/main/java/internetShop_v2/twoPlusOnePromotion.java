@@ -1,9 +1,10 @@
 package internetShop_v2;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class twoPlusOnePromotion implements Promotion {
-    public ArrayList<Product> calculateBasketAfterPromotion(Basket basket){
+    public List<Product> calculateBasketAfterPromotion(Basket basket){
         int NotNull = 0;
         for (Product product : basket.getProducts()){
             if (product != null){

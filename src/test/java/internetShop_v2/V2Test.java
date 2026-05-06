@@ -4,12 +4,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import java.util.Arrays;
 public class V2Test {
     
     private Basket basket;
 
-    static String[][] Converter(ArrayList<String[]> score){
+    static String[][] Converter(List<String[]> score){
         String[][] wynik = new String[score.size()][4];
     
         int i = 0;
@@ -62,7 +64,7 @@ public class V2Test {
 
         Promotion twoPlusOnePromotion = new DollPromotion();
         basket.setPromotion(twoPlusOnePromotion);
-        ArrayList<String[]> score = basket.getProductsFinalPricesAfterPromotions();
+        List<String[]> score = basket.getProductsFinalPricesAfterPromotions();
 
         String[][] Converted = Converter(score);
 
@@ -74,7 +76,7 @@ public class V2Test {
 
         Promotion MoreThan300 = new MoreThan300();
         basket.setPromotion(MoreThan300);
-        ArrayList<String[]> score = basket.getProductsFinalPricesAfterPromotions();
+        List<String[]> score = basket.getProductsFinalPricesAfterPromotions();
 
         String[][] Converted = Converter(score);
 
@@ -85,7 +87,7 @@ public class V2Test {
     void freeCupTest(){
         Promotion FreeCup = new FreeCup();
         basket.setPromotion(FreeCup);
-        ArrayList<String[]> score = basket.getProductsFinalPricesAfterPromotions();
+        List<String[]> score = basket.getProductsFinalPricesAfterPromotions();
 
         String[][] Converted = Converter(score);
 

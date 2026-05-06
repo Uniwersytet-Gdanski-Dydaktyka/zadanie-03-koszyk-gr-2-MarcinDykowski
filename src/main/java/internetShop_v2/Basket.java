@@ -2,17 +2,18 @@ package internetShop_v2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Collections;
 
 public class Basket {
-    private ArrayList<Product> productTable;
+    private List<Product> productTable;
     private Promotion currentPromotion;
 
     public Basket(){
         this.productTable = new ArrayList<Product>();
     }
 
-    public ArrayList<Product> getProducts(){
+    public List<Product> getProducts(){
         return productTable;
     }
 
@@ -20,15 +21,15 @@ public class Basket {
         this.currentPromotion = p;
     }
 
-public ArrayList<String[]> getProductsFinalPricesAfterPromotions() {
-        ArrayList<Product> dataSoruce;
+public List<String[]> getProductsFinalPricesAfterPromotions() {
+        List<Product> dataSoruce;
         if (currentPromotion == null) {
             dataSoruce = this.productTable;
         } else {
             dataSoruce = currentPromotion.calculateBasketAfterPromotion(this);
         }
 
-        ArrayList<String[]> Score = new ArrayList<String[]>();
+        List<String[]> Score = new ArrayList<String[]>();
         
         for (int i = 0; i < dataSoruce.size(); i++) {
             if (dataSoruce.get(i) != null) {

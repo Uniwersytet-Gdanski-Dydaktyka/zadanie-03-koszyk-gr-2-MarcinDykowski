@@ -1,7 +1,8 @@
 package internetShop_v2;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface Promotion {
-    public ArrayList<Product> calculateBasketAfterPromotion(Basket basket);
+    public List<Product> calculateBasketAfterPromotion(Basket basket);
 }

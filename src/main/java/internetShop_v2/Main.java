@@ -2,6 +2,7 @@ package internetShop_v2;
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,17 +21,17 @@ public class Main {
     // System.out.println(basket.calculateSumOfPrices());
 
 
-    Promotion FreeCup = new FreeCup();
-    basket.setPromotion(FreeCup);
-    ArrayList<String[]> test = basket.getProductsFinalPricesAfterPromotions();
-    String[][] wynik = new String[test.size()][4];
+    // Promotion FreeCup = new FreeCup();
+    // basket.setPromotion(FreeCup);
+    // List<String[]> test = basket.getProductsFinalPricesAfterPromotions();
+    // String[][] wynik = new String[test.size()][4];
     
-    int i = 0;
-    for (String[] productData : test) {
-        wynik[i] = productData;
-        i++;
-    }
-    System.out.println(Arrays.deepToString(wynik));
+    // int i = 0;
+    // for (String[] productData : test) {
+    //     wynik[i] = productData;
+    //     i++;
+    // }
+    // System.out.println(Arrays.deepToString(wynik));
 
     // Promotion twoPlusOnePromotion = new DollPromotion();
     // basket.setPromotion(twoPlusOnePromotion);

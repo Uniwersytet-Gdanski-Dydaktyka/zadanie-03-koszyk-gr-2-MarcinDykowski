@@ -1,11 +1,11 @@
 package internetShop_v2;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class FreeCup implements Promotion {
-    public ArrayList<Product> calculateBasketAfterPromotion(Basket basket){
+    public List<Product> calculateBasketAfterPromotion(Basket basket){
         if (basket.calculateSumOfPrices() > 200){
-            ArrayList<Product> x = basket.getProducts();
+            List<Product> x = basket.getProducts();
             for (int i = 0; i < basket.getProducts().size() ;i++){
                 if (x.get(i) == null){
                     x.add((new Product("10", "Cup", 0)));
