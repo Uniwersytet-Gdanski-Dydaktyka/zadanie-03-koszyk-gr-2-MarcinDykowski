@@ -83,3 +83,5 @@ pusty koszyk, produkty z ceną zerową, próba zastosowania promocji na pusty ko
 ### Uwaga 6
 Do rozwiązania dołącz **diagram klas UML** przedstawiający zaprojektowaną strukturę 
 (w formacie graficznym lub tekstowym, np. PlantUML).
+
+javac -d out *.java && java -cp out internetShop_v1.Main
