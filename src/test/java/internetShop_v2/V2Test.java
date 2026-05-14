@@ -24,7 +24,8 @@ public class V2Test {
 
     @BeforeEach
     void setUpTest() {
-        basket = new Basket();
+        Sort Standard = new SortingByPriceDESCandByNameDESC();
+        basket = new Basket(Standard);
 
         basket.insertProduct(new Product("01", "Doll", 100));
         basket.insertProduct(new Product("02", "Car", 2137));

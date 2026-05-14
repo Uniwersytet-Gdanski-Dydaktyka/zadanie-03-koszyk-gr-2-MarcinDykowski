@@ -7,7 +7,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-    Basket basket = new Basket();
+    Basket basket = new Basket(new SortingByPriceDESCandByNameDESC());
     basket.insertProduct(new Product("01", "Doll", 100));
     basket.insertProduct(new Product("02", "Car", 2137));
     basket.insertProduct(new Product("03", "Pope", 67));

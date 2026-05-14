@@ -6,9 +6,11 @@ import java.util.Collections;
 public class Basket {
     private Product[] productTable;
     private Promotion currentPromotion;
+    private Sort currentSorting;
 
-    public Basket(){
+    public Basket(Sort strategy){
         this.productTable = new Product[10];
+        this.currentSorting = strategy;
     }
 
     public Product[] getProducts(){
@@ -58,27 +60,7 @@ public String[][] getProductsFinalPricesAfterPromotions() {
                 break;
             }
         }
-        // Sorting according to price and then name
-        for (int i = 0; i < this.productTable.length; i++){
-            if (this.productTable[i] == null){
-                break;
-            }
-            for (int j = i + 1; j < this.productTable.length; j++){
-                if (this.productTable[j] == null) { break; }
-                if (Double.parseDouble(getProducts(i)[2]) < Double.parseDouble(getProducts(j)[2])){
-                    Product memory = this.productTable[i];
-                    this.productTable[i] = this.productTable[j];
-                    this.productTable[j] = memory;
-                }
-                if (Double.parseDouble(getProducts(i)[2]) == Double.parseDouble(getProducts(j)[2])){
-                    if (getProducts(i)[1].compareTo(getProducts(j)[1]) < 0) {
-                        Product memory = this.productTable[i];
-                        this.productTable[i] = this.productTable[j];
-                        this.productTable[j] = memory;
-                    }
-                }
-            }
-        }
+        this.productTable = currentSorting.SortThings(this.productTable);
         
     }
 

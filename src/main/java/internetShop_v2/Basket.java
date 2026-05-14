@@ -8,9 +8,11 @@ import java.util.Collections;
 public class Basket {
     private List<Product> productTable;
     private Promotion currentPromotion;
+    private Sort currentSorting;
 
-    public Basket(){
+    public Basket(Sort strategy){
         this.productTable = new ArrayList<Product>();
+        this.currentSorting = strategy;
     }
 
     public List<Product> getProducts(){
@@ -46,27 +48,28 @@ public List<String[]> getProductsFinalPricesAfterPromotions() {
 
     public void insertProduct(Product p){
         this.productTable.add(p);
+        this.productTable = currentSorting.SortThings(this.productTable);
         // Sorting according to price and then name
-        for (int i = 0; i < this.productTable.size(); i++){
-            if (this.productTable.get(i) == null){
-                break;
-            }
-            for (int j = i + 1; j < this.productTable.size(); j++){
-                if (this.productTable.get(j) == null) { break; }
-                if (Double.parseDouble(getProducts(i)[2]) < Double.parseDouble(getProducts(j)[2])){
-                    Product memory = this.productTable.get(i);
-                    this.productTable.set(i, this.productTable.get(j));
-                    this.productTable.set(j, memory);
-                }
-                if (Double.parseDouble(getProducts(i)[2]) == Double.parseDouble(getProducts(j)[2])){
-                    if (getProducts(i)[1].compareTo(getProducts(j)[1]) < 0) {
-                        Product memory = this.productTable.get(i);
-                        this.productTable.set(i, this.productTable.get(j));
-                        this.productTable.set(j, memory);
-                    }
-                }
-            }
-        }
+        // for (int i = 0; i < this.productTable.size(); i++){
+        //     if (this.productTable.get(i) == null){
+        //         break;
+        //     }
+        //     for (int j = i + 1; j < this.productTable.size(); j++){
+        //         if (this.productTable.get(j) == null) { break; }
+        //         if (Double.parseDouble(getProducts(i)[2]) < Double.parseDouble(getProducts(j)[2])){
+        //             Product memory = this.productTable.get(i);
+        //             this.productTable.set(i, this.productTable.get(j));
+        //             this.productTable.set(j, memory);
+        //         }
+        //         if (Double.parseDouble(getProducts(i)[2]) == Double.parseDouble(getProducts(j)[2])){
+        //             if (getProducts(i)[1].compareTo(getProducts(j)[1]) < 0) {
+        //                 Product memory = this.productTable.get(i);
+        //                 this.productTable.set(i, this.productTable.get(j));
+        //                 this.productTable.set(j, memory);
+        //             }
+        //         }
+        //     }
+        // }
         
     }
 
