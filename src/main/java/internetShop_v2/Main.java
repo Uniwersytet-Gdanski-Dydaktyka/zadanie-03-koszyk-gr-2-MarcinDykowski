@@ -12,6 +12,7 @@ public class Main {
     basket.insertProduct(new Product("02", "Car", 2137));
     basket.insertProduct(new Product("03", "Pope", 67));
 
+    // zabawa
     // System.out.println(Arrays.toString(basket.getProducts(0)));
     // System.out.println(basket.TheMostExpensive());
     // System.out.println(basket.TheCheapest());
